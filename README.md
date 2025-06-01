@@ -51,5 +51,9 @@ $ docker compose logs database
 # connecting via ephemeral container
 $ docker compose run --rm database psql -U postgres -h database
 ```
+#### testing
+```bash
+$ docker-compose exec web bin/rails spec
+```
 ## Use
 Visit http://localhost:3000 
