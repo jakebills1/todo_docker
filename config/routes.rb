@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  # sidekiq dashboard
+  mount Sidekiq::Web => '/sidekiq'
   resources :users
   get "hello", to: "hello#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

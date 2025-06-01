@@ -20,4 +20,5 @@ end
 
 gem "pry", "~> 0.15.2"
 gem "redis"
-gem "devise", "~> 4.9"
+
+gem "sidekiq", "~> 8.0"

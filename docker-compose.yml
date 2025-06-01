@@ -21,6 +21,12 @@ services:
       - .env/development/database
     volumes:
       - db_data:/var/lib/postgresql/data
+  sidekiq:
+    build: .
+    command: ["bundle", "exec", "sidekiq"]
+    env_file:
+      - .env/development/web
+      - .env/development/database
 
 
 volumes:
