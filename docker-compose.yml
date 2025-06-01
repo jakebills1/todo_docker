@@ -1,0 +1,9 @@
+# default network for the services is <project-name>_default
+# volumes makes it so changes to the local files are pulled into the container without restarting
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app

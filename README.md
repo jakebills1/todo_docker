@@ -1,5 +1,7 @@
 # README
 
+## Build and Run
+### using Docker
 ```bash
 # build
 $ docker build .
@@ -8,4 +10,11 @@ $ docker run -p 3000:3000 <container id or name>
 # non-default command, eg show rake tasks
 $ docker run --rm <container id or name> bin/bails -T
 ```
+
+### using Docker compose
+```bash
+$ docker compose up
+```
+
+## Use
 Visit http://localhost:3000 
