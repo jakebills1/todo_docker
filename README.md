@@ -12,6 +12,7 @@ $ docker run --rm <container id or name> bin/bails -T
 ```
 
 ### using Docker compose
+#### managing web
 ```bash
 # start in background
 $ docker compose up -d
@@ -32,12 +33,23 @@ $ docker compose build web
 $ docker compose down
 # remove containers only
 $ docker compose rm
+```
+#### managing redis
+```bash
 # managing other services
 $ docker compose up -d redis
 # start up ephemeral container running redis-cli connected to redis host
 # - "redis" is a host name within DNS settings of container / network
 $ docker compose run --rm redis redis-cli -h redis
 ```
-
+#### managing database
+```bash
+# starting
+$ docker compose up -d database
+# viewing logs
+$ docker compose logs database
+# connecting via ephemeral container
+$ docker compose run --rm database psql -U postgres -h database
+```
 ## Use
 Visit http://localhost:3000 
