@@ -1,5 +1,7 @@
 # default network for the services is <project-name>_default
 # volumes makes it so changes to the local files are pulled into the container without restarting
+# - data exists on host at /var/lib/docker/volumes/todo_db_data/_data
+#   - found with docker volume inspect --format '{{ .Mountpoint }}' todo_db_data
 services:
   web:
     build: .
