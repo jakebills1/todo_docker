@@ -32,6 +32,11 @@ $ docker compose build web
 $ docker compose down
 # remove containers only
 $ docker compose rm
+# managing other services
+$ docker compose up -d redis
+# start up ephemeral container running redis-cli connected to redis host
+# - "redis" is a host name within DNS settings of container / network
+$ docker compose run --rm redis redis-cli -h redis
 ```
 
 ## Use
