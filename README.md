@@ -1,7 +1,10 @@
 # README
 
 ```bash
+# build
 $ docker build .
-$ docker run -p 3000:3000 <container id or name> \
-bin/rails s -b 0.0.0.0
+# run server
+$ docker run -p 3000:3000 <container id or name>
+# non-default command, eg show rake tasks
+$ docker run --rm <container id or name> bin/bails -T
 ```
