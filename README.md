@@ -33,6 +33,8 @@ $ docker compose build web
 $ docker compose down
 # remove containers only
 $ docker compose rm
+# add dependencies
+$ docker compose exec web bundle add some_gem
 ```
 #### managing redis
 ```bash

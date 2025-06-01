@@ -16,6 +16,8 @@ COPY Gemfile* /usr/src/app/
 # set working directory
 WORKDIR /usr/src/app
 
+# use for more granular caching of gems
+ENV BUNDLE_PATH /gems
 
 # install project dependencies in working directory
 RUN bundle install
