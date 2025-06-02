@@ -72,3 +72,5 @@ $ docker-compose exec web bin/rails spec
 ```
 ## Use
 Visit http://localhost:3000 
+
+`git checkout integrate-react-dev-env` to see example integrating React environment into Docker compose development setup.
