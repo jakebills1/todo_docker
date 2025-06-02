@@ -36,7 +36,9 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   sidekiq:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-sidekiq
     command: ["bundle", "exec", "sidekiq"]
     env_file:
       - .env/development/web
