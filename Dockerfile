@@ -13,6 +13,9 @@ RUN apt-get update -yqq && \
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 RUN apt-get install -y nodejs
 
+# get latest npm version
+RUN npm install -g npm@latest
+
 # check node version
 RUN node --version
 # check npm version
