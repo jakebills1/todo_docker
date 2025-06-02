@@ -22,3 +22,5 @@ gem "pry", "~> 0.15.2"
 gem "redis"
 
 gem "sidekiq", "~> 8.0"
+
+gem "shakapacker", "= 8.3"

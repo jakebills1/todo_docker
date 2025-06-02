@@ -6,8 +6,17 @@ FROM ruby:latest
 # - separate packages by lines
 RUN apt-get update -yqq && \
     apt-get install -yqq --no-install-recommends \
-    nodejs \
-    vim
+    curl \
+    gnupg
+
+# install latest node from deb
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+RUN apt-get install -y nodejs
+
+# check node version
+RUN node --version
+# check npm version
+RUN npm --version
 
 # copy only gemfile
 # - caching works top to bottom, this ensures Gems are only rebuilt when Gemfile changes
