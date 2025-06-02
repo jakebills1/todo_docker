@@ -21,9 +21,10 @@ RUN node --version
 # check npm version
 RUN npm --version
 
-# copy only gemfile
+# copy only gemfile and package.json first
 # - caching works top to bottom, this ensures Gems are only rebuilt when Gemfile changes
 COPY Gemfile* /usr/src/app/
+COPY package.json package-lock.json* ./
 
 # set working directory
 WORKDIR /usr/src/app
@@ -33,6 +34,18 @@ ENV BUNDLE_PATH /gems
 
 # install project dependencies in working directory
 RUN bundle install
+
+# install react dependencies (needs to be in working directory)
+RUN npm install \
+    react \
+    react-dom \
+    @babel/preset-react \
+    css-loader \
+    style-loader \
+    mini-css-extract-plugin \
+    css-minimizer-webpack-plugin
+
+RUN npm ci && npm cache clean --force
 
 # copy rest of source from host to container
 COPY . /usr/src/app/

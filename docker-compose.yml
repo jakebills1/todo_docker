@@ -13,6 +13,20 @@ services:
     env_file:
       - .env/development/web
       - .env/development/database
+    environment:
+      - SHAKAPACKER_DEV_SERVER_HOST=shakapacker_dev_server
+  shakapacker_dev_server:
+    build: .
+    command: ./bin/shakapacker-dev-server
+    ports:
+      - "3035:3035"
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env/development/web
+      - .env/development/database
+    environment:
+      - SHAKAPACKER_DEV_SERVER_HOST=0.0.0.0
   redis:
     image: redis
   database:
