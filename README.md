@@ -1,5 +1,18 @@
 # README
-
+## Setup
+Add the following files to the project root:
+.env/development/web
+```text
+DATABASE_HOST=database
+REDIS_URL=redis://redis:6379
+```
+.env/development/database
+```text
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=password
+POSTGRES_DB=todo_development
+```
+Install and configure Docker and Docker Compose on your [machine](https://docs.docker.com/get-started/get-docker/).
 ## Build and Run
 ### using Docker
 ```bash
